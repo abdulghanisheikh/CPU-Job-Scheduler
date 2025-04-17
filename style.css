@@ -1,0 +1,182 @@
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f0f2f5;
+  color: #333;
+}
+.container {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+h1 { text-align: center; margin-bottom: 1.5rem; }
+form .form-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+form .form-row label {
+  flex: 0 0 150px;
+  font-weight: bold;
+}
+form .form-row input,
+form .form-row select {
+  flex: 1;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+#processes-container .process-line {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+#processes-container input {
+  flex: 1;
+  padding: 0.5rem;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+}
+button {
+  width: 100%;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 4px;
+  background: #007bff;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: .3s;
+}
+button:hover { background: #0056b3; }
+#output {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+.output-block {
+  flex: 1 1 45%;
+  background: #fafafa;
+  padding: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+}
+#trace-output { overflow-x: auto; }
+.gantt-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.25rem;
+}
+.gantt-label {
+  width: 80px;
+  font-weight: bold;
+}
+.gantt-cell {
+  width: 24px;
+  height: 24px;
+  margin: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  border-radius: 2px;
+}
+.gantt-cell.exec { background: #28a745; color: #fff; }
+.gantt-cell.wait { background: #ffc107; color: #333; }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+}
+th, td {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+}
+th { background: #e9ecef; }
+
+/* Base styles (kept same) ... */
+
+/* Add after previous styles */
+body {
+    background: linear-gradient(to bottom, #f7f9fc, #dfe9f3);
+  }
+  
+  h1 {
+    background: linear-gradient(to right, #007bff, #6610f2);
+    color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+  
+  button {
+    transition: 0.3s ease, transform 0.2s ease;
+  }
+  button:hover {
+    background: #0056b3;
+    transform: scale(1.03);
+  }
+  
+  .gantt-cell {
+    width: 30px;
+    height: 30px;
+    margin: 1px;
+    font-size: 0.75rem;
+    border-radius: 4px;
+    opacity: 0;
+    transform: scale(0.9);
+    animation: fadeIn 0.4s forwards;
+    position: relative;
+  }
+  .gantt-cell.exec {
+    background: #4caf50;
+    color: #fff;
+    box-shadow: 0 0 5px #4caf50;
+  }
+  .gantt-cell.wait {
+    background: #ffc107;
+    color: #000;
+    box-shadow: 0 0 5px #ffc107;
+  }
+  .gantt-cell:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    background: #333;
+    color: white;
+    padding: 2px 6px;
+    font-size: 0.7rem;
+    border-radius: 4px;
+    white-space: nowrap;
+    transform: translateY(-5px);
+    opacity: 1;
+    pointer-events: none;
+  }
+  
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  .output-block {
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(6px);
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  }
+  
+  /* Gantt label fancy */
+  .gantt-label {
+    font-weight: bold;
+    padding-right: 4px;
+    color: #333;
+  }
+  
