@@ -14,4 +14,4 @@ A Web-Based Tool using HTML, CSS and JavaScript
 ## 🛠️ Technologies Used
 
 - HTML, CSS and JavaScript
-- VS Code and Git
+- VS Code, node V.13.1
